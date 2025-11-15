@@ -4,7 +4,7 @@ local Window = Rayfield:CreateWindow({
    Name = "H|X",
    Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
    LoadingTitle = "H|X Interface Suite",
-   LoadingSubtitle = "by XLVY1",
+   LoadingSubtitle = "by XLVY",
    ShowText = "H|X", -- for mobile users to unhide rayfield, change if you'd like
    Theme = "Default", -- Check https://docs.sirius.menu/rayfield/configuration/themes
 
