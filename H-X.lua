@@ -102,14 +102,15 @@ local Input = MainTab:CreateInput({
    RemoveTextAfterFocusLost = false,
    Flag = "Input1",
    Callback = function(Text)
-      local value = tonumber(Text)
-      if value and value >= 1 and value <= 200 then
-         local player = game.Players.LocalPlayer
-         local char = player.Character
-         local humanoid = char and char:FindFirstChildOfClass("Humanoid")
-         if humanoid then
-             humanoid.JumpPower = value
-         end
-      end
+       local value = tonumber(Text)
+       if not value then return end 
+
+       local player = game.Players.LocalPlayer
+       local char = player.Character
+       local humanoid = char and char:FindFirstChildOfClass("Humanoid")
+
+       if humanoid then
+           humanoid.JumpPower = value
+       end
    end,
 })
