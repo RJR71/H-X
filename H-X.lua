@@ -95,22 +95,14 @@ local Slider = MainTab:CreateSlider({
    end,
 })
 
-local Input = MainTab:CreateInput({
+local Slider = MainTab:CreateJump({
    Name = "Jump Power",
-   CurrentValue = "",
-   PlaceholderText = "1-200",
-   RemoveTextAfterFocusLost = false,
-   Flag = "Input1",
-   Callback = function(Text)
-       local value = tonumber(Text)
-       if not value then return end 
-
-       local player = game.Players.LocalPlayer
-       local char = player.Character
-       local humanoid = char and char:FindFirstChildOfClass("Humanoid")
-
-       if humanoid then
-           humanoid.JumpPower = value
-       end
+   Range = {0, 300},
+   Increment = 1,
+   Suffix = "Jump",
+   CurrentValue = 50,
+   Flag = "Slider1",
+   Callback = function(Value)
+   game.Players.LocalPlayer.Character.Humanoid.JumpPower = (Value)
    end,
 })
