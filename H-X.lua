@@ -99,10 +99,17 @@ local Slider = MainTab:CreateSlider({
    Name = "Jump Power",
    Range = {0, 300},
    Increment = 1,
-   Suffix = "Speed",
+   Suffix = "Power",
    CurrentValue = 50,
    Flag = "Sliderjp",
    Callback = function(Value)
-   game.Players.LocalPlayer.Character.Humanoid.JumpPower = (Value)
+       local player = game.Players.LocalPlayer
+       local char = player.Character
+       local humanoid = char and char:FindFirstChildOfClass("Humanoid")
+
+       if humanoid then
+           humanoid.JumpPower = Value
+       end
    end,
 })
+
