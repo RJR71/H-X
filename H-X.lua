@@ -45,7 +45,7 @@ Rayfield:Notify({
    Content = "Hello",
    Duration = 5,
    Image = nill,
-})    
+})
 
 local Button = MainTab:CreateButton({
    Name = "inf jump",
@@ -74,6 +74,24 @@ if not _G.infinJumpStarted then
         end
     end)
 end
+   end,
+})
+
+local Slider = MainTab:CreateSlider({
+   Name = "WalkSpeed",
+   Range = {0, 300},
+   Increment = 1,
+   Suffix = "Speed",
+   CurrentValue = 16,
+   Flag = "Slider1",
+   Callback = function(Value)
+       local player = game.Players.LocalPlayer
+       local char = player.Character
+       local humanoid = char and char:FindFirstChildOfClass("Humanoid")
+
+       if humanoid then
+           humanoid.WalkSpeed = Value
+       end
    end,
 })
 
