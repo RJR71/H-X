@@ -95,13 +95,13 @@ local Slider = MainTab:CreateSlider({
    end,
 })
 
-local Jump = MainTab:CreateJump({
+local Slider = MainTab:CreateSlider({
    Name = "Jump Power",
    Range = {0, 300},
    Increment = 1,
-   Suffix = "Jump",
+   Suffix = "Speed",
    CurrentValue = 50,
-   Flag = "Slider1",
+   Flag = "Sliderjp",
    Callback = function(Value)
    game.Players.LocalPlayer.Character.Humanoid.JumpPower = (Value)
    end,
